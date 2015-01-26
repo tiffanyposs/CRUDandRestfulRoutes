@@ -1,0 +1,25 @@
+<html>
+	<body>
+		<header>
+			<h1>petulance</h1>
+            <a href="/pets">Go Home</a>
+		</header>
+
+        <p><%= thispet[:name] %> is a <%= thispet[:type] %></p>
+
+        <h3>Update <%= thispet[:name] %>'s name here:</h3>
+        <form action="/pet/<%= thispet[:id]%>" method = 'post'>
+            <input type="hidden" name = "_method"  value = 'put'>
+            <input type="text" name = "newname" placeholder="what's their name?" required>
+            <button>UPDATE IT!!!1!</button>
+        </form>
+
+        <p><%= thispet[:name] %> can be removed here: </p>
+        <form action= '/pet/<%= thispet[:id]%>' method= 'post'>
+            <input type="hidden" name="_method" value="delete">
+            <button>DELETE IT!!!!</button>
+        </form>
+
+
+	</body>
+</html>
